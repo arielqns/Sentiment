@@ -31,7 +31,7 @@ class Login extends Component {
         .then(res => {
           if(res.status === 200 ){
             this.props.authenticate();
-            return <Redirect to="/books" />
+            return <Redirect to="/articles" />
           }
         })
         .catch(err => console.log(err));
@@ -63,7 +63,7 @@ class Login extends Component {
                 disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Article
               </FormBtn>
             </form>
           </Col>
@@ -71,7 +71,7 @@ class Login extends Component {
         </Row>
 
         {/* Redirect on authentication */}
-        {this.props.authenticated ? <Redirect to='/books'/>: <div></div>}
+        {this.props.authenticated ? <Redirect to='/articles'/>: <div></div>}
       </Container>
     );
   }
