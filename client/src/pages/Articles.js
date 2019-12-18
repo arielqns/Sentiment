@@ -7,7 +7,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 
 class articles extends Component {
   state = {
@@ -21,7 +21,7 @@ class articles extends Component {
   loadArticles = () => {
     API.getArticles()
       .then(res =>
-        this.setState({ articles: res.data, headline: "", score: "", type: "" })
+        this.setState({ articles: res.data, title: "", score: "", type: "" })
       )
       .catch(err => console.log(err));
   };
@@ -41,9 +41,9 @@ class articles extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.headline && this.state.score) {
+    if (this.state.title && this.state.score) {
       API.saveArticle({
-        headline: this.state.headline,
+        title: this.state.title,
         score: this.state.score,
         type: this.state.type
       })
@@ -62,13 +62,13 @@ class articles extends Component {
             </Jumbotron>
             <form>
               <Input
-                value={this.state.query}
+                value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Title (required)"
               />
               <FormBtn
-                disabled={!(this.state.score && this.state.headline)}
+                disabled={!(this.state.score && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Article
@@ -85,10 +85,10 @@ class articles extends Component {
                   <ListItem key={article._id}>
                     <Link to={"/articles/" + article._id}>
                       <strong>
-                        {article.title} by {book.author}
+                        {article.title}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteArticle(book._id)} />
+                    <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
                   </ListItem>
                 ))}
               </List>
