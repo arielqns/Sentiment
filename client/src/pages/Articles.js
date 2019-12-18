@@ -1,3 +1,5 @@
+// home page
+
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
@@ -7,29 +9,26 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class articles extends Component {
   state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    query: "",
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadArticles();
   }
 
-  loadBooks = () => {
-    API.getBooks()
+  loadArticles = () => {
+    API.getArticles()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ articles: res.data, headline: "", score: "", type: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  deleteArticle = id => {
+    API.deleteArticle(id)
+      .then(res => this.loadarticles())
       .catch(err => console.log(err));
   };
 
@@ -42,13 +41,13 @@ class Books extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+    if (this.state.headline && this.state.score) {
+      API.saveArticle({
+        headline: this.state.headline,
+        score: this.state.score,
+        type: this.state.type
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadarticles())
         .catch(err => console.log(err));
     }
   };
@@ -59,49 +58,37 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Query for a news topic</h1>
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.query}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Title (required)"
               />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.score && this.state.headline)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Article
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Articles On My List</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.articles.length ? (
               <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {this.state.articles.map(article => (
+                  <ListItem key={article._id}>
+                    <Link to={"/articles/" + article._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {article.title} by {book.author}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    <DeleteBtn onClick={() => this.deleteArticle(book._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -115,4 +102,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default articles;

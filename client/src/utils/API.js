@@ -9,21 +9,21 @@ const xhrHeader = {
 };
 
 export default {
-  // Gets all books
-  getBooks: function () {
-    return axios.get("/api/books");
+  // Gets all articles
+  getArticles: function () {
+    return axios.get("/api/article");
   },
   // Gets the book with the given id
-  getBook: function (id) {
-    return axios.get("/api/books/" + id);
+  getArticle: function (id) {
+    return axios.get("/api/article/" + id);
   },
   // Deletes the book with the given id
-  deleteBook: function (id) {
-    return axios.delete("/api/books/" + id);
+  deleteArticle: function (id) {
+    return axios.delete("/api/article/" + id);
   },
   // Saves a book to the database
-  saveBook: function (bookData) {
-    return axios.post("/api/books", bookData);
+  saveArticle: function (bookData) {
+    return axios.post("/api/article", bookData);
   },
   loginUser: function (user) {
     return axios.post("/api/user/", user, xhrHeader)
@@ -33,6 +33,12 @@ export default {
   },
   authenticateUser: function () {
     return axios.post("/api/user/authenticate/", xhrHeader)
+  },
+
+  news: {
+    get: function(query) {
+      return axios.get("/api/news/" + query)
+    }
   }
 
 };
