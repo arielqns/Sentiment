@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const articleschema = new Schema({
   query: { type: String, required: true },
+  source: { id: String, name: String },
   author: { type: String },
   title: { type: String },
   description: { type: String },
@@ -13,9 +14,7 @@ const articleschema = new Schema({
   type: { type: String },
   score: { type: String },
   ratio: { type: String },
-  keywords: [
-    { word: { type: String }},
-    { score: { type: Number }} ],
+  keywords: [ { word: String, score: Number } ],
   date: { type: Date, default: Date.now }
 });
 

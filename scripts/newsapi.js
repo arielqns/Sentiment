@@ -38,13 +38,15 @@ newsapi.v2.everything({
             }))
     })
     Promise.all(promises)
-        .then(responses => {
-            articles.map((article, i) => {
-                let keys = Object.keys(responses[i].data)
-                keys.forEach(key => {
-                    article[key] = responses[i].data[key]
-                })
-                return article
+    .then(responses => {
+        articles.map((article, i) => {
+            let keys = Object.keys(responses[i].data)
+            keys.forEach(key => {
+                if (key !== "keywords") {
+                article[key] = responses[i].data[key]
+                }
+            })
+            return article
             })
             console.log(articles)
         })

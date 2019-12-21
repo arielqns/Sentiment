@@ -9,76 +9,92 @@ mongoose.connect(
 );
 
 const articleseed = [
-      {
-        author: 'The Daily Signal',
-        title: 'When the House First Tried to Impeach a President, It Failed',
-        description: 'The presidents critics thought his presidency was illegitimate to begin with. His Cabinet members changed frequently. Mainly based on policy disagreements, members of Congress demanded his ouster. Some lawmakers were willing to toss out constitutional norms …',
-        url: 'https://www.freerepublic.com/focus/f-news/3797020/posts',
-        urlToImage: null,
-        publishedAt: '2019-11-28T04:31:20Z',
-        content: 'Skip to comments.\r\n' +
-          'When the House First Tried to Impeach a President, It FailedThe Daily Signal ^\r\n' +
-          ' | November 26, 2019\r\n' +
-          ' | Fred Lucas\r\n' +
-          'Posted on 11/27/2019 8:31:20 PM PST by Tolerance Sucks Rocks\r\n' +
-          'The president’s critics thought his presidency was illegitima… [+3293 chars]',
-        date: new Date(Date.now()),
-        score: 0.659392352,
-        type: 'positive'
-      },
-      {
-        author: 'thedailybeast',
-        title: 'Chris Christie Clashes With The View Hosts on Impeachment Chris Christie Clashes With The View Hosts on Impeachment',
-        description: 'Wednesday morning on The View, Whoopi Goldberg was out and Chris Christie was in. Did you like that applause? All that adoration? Joy Behar asked the former New Jersey governor after introducing him. It beats booing, you know, he replied. Thats good. I…',
-        url: 'https://www.freerepublic.com/focus/f-news/3800131/posts',
-        urlToImage: null,
-        publishedAt: '2019-12-11T21:25:56Z',
-        content: 'Skip to comments.\r\n' +
-          'Chris Christie Clashes With The View Hosts on Impeachment\r\n' +
-          'Chris Christie Clashes With The View Hosts on Impeachmentthedailybeast ^\r\n' +
-          ' | 12/11/2019\r\n' +
-          ' | Matt Wilstein\r\n' +
-          'Posted on 12/11/2019 1:25:56 PM PST by ChicagoConservative27\r\n' +
-          'Wednesday mo… [+2593 chars]',
-        date: new Date(Date.now()),  
-        type: 0.00124352,
-        sentiment: 'positive'
-      },
-      {
-        author: 'GP',
-        title: 'Breaking Poll Shows 3 More Moderate Democrats Face Defeat on Impeachment Vote  At Least 6 Total',
-        description: 'And a new poll by American Action Network finds three more moderate Democrats are likely to face defeat in November for backing the sham impeachment. AAN polled in the swing districts of Reps. SUSIE LEE (D-Nev.) and ANTHONY BRINDISI (D-N.Y.) and the very he…',
-        url: 'https://www.freerepublic.com/focus/f-bloggers/3799298/posts',
-        urlToImage: null,
-        publishedAt: '2019-12-08T20:33:18Z',
-        content: 'Skip to comments.\r\n' +
-          'Breaking Poll Shows 3 More Moderate Democrats Face Defeat on Impeachment Vote At Least 6 TotalGP ^\r\n' +
-          ' | December 8, 2019\r\n' +
-          ' | Jim Hoft\r\n' +
-          'Posted on 12/08/2019 12:33:18 PM PST by mplc51\r\n' +
-          'And a new poll by American Action Network finds three more… [+5317 chars]',
-        date: new Date(Date.now()),
-        score: -0.67538,
-        type: 'negative',
-      },
-      {
-        author: 'Rush Limbaugh',
-        title: 'After Slow Walk, Why Make Tracks to Impeach Now? (scared Schiffless)',
-        description: 'RUSH: So quick question here, folks. Werent the Democrats wanting to drag this impeachment thing out at first to kind of bleed Trump dry? You know, death by a thousand cuts. Now, all of a sudden, they want to speed this up. Schiff is giving his committee 24 …',
-        url: 'https://www.freerepublic.com/focus/f-news/3797863/posts',
-        urlToImage: null,
-        publishedAt: '2019-12-02T23:39:18Z',
-        content: 'Skip to comments.\r\n' +
-          'After Slow Walk, Why Make Tracks to Impeach Now? (scared Schiffless)Rush Limbaugh ^\r\n' +
-          ' | 12/02/19\r\n' +
-          ' | El Rushbo\r\n' +
-          'Posted on 12/02/2019 3:39:18 PM PST by Libloather\r\n' +
-          'RUSH: So quick question here, folks. Weren’t the Democrats wanting to drag th… [+9797 chars]',
-        date: new Date(Date.now()),
-        score: -0.99845386342,
-        type: 'negative'
-      }
-    ]
+  {
+    source: { id: null, name: 'Lifehacker.com' },
+    author: 'twinword inc.',
+    title: 'What Happens Now That President Trump Has Been Impeached?',
+    description: 'On Wednesday and in a vote that split very closely along party lines, the House impeached President Donald Trump, making him the third president in U.S. history to have ever been impeached. In its vote, the House passed both articles of impeachment brought fo…',
+    url: 'https://lifehacker.com/what-happens-now-that-president-trump-has-been-impeache-1840531039',
+    urlToImage: 'https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/br8pcbzc6jwcngid2voq.jpg',
+    publishedAt: '2019-12-19T16:41:00Z',
+    content: 'On Wednesday and in a vote that split very closely along party lines, the House impeached President Donald Trump, making him the third president in U.S. history to have ever been impeached. In its vote, the House passed both articles of impeachment brought fo… [+3493 chars]',
+    type: 'negative',
+    score: -0.094017221533333,
+    ratio: -0.5594714590221,
+    version: '4.0.0',
+    email: 'help@twinword.com',
+    result_code: '200',
+    result_msg: 'Success'
+  },
+  {
+    source: { id: 'cnn', name: 'CNN' },
+    author: 'twinword inc.',
+    title: 'McConnell: No chance Trump will be removed from office',
+    description: 'In an interview on Fox News, Senate Majority Leader Mitch McConnell (R-KY) said there was "no chance" President Trump would be removed from office after an impeachment trial in the Senate.',
+    url: 'https://www.cnn.com/videos/politics/2019/12/13/mitch-mcconnell-impeachment-no-chance-trump-will-be-removed-sot-vpx.cnn',
+    urlToImage: 'https://cdn.cnn.com/cnnnext/dam/assets/191213030921-mitch-mcconnell-no-chance-trump-removed-super-tease.jpg',
+    publishedAt: '2019-12-13T08:33:29Z',
+    content: "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds.",
+    type: 'neutral',
+    score: -0.021721194,
+    ratio: -0.13429750259822,
+    version: '4.0.0',
+    email: 'help@twinword.com',
+    result_code: '200',
+    result_msg: 'Success'
+  },
+  {
+    source: { id: 'the-new-york-times', name: 'The New York Times' },
+    author: 'twinword inc.',
+    title: 'Facing Blockade in Senate, House Democrats Bet Their Votes Are Worth It',
+    description: 'Backing the impeachment of President Trump is a politically risky step for many Democrats, more so given that Republicans have made clear the effort will die in the Senate.',
+    url: 'https://www.nytimes.com/2019/12/18/us/impeachment-democrats-votes.html',
+    urlToImage: 'https://static01.nyt.com/images/2019/12/18/us/politics/18dc-assess2/18dc-assess2-facebookJumbo.jpg',
+    publishedAt: '2019-12-18T20:34:12Z',
+    content: 'They showed that Mr. Trump and his aides and allies linked a sought-after Oval Office meeting for Ukraines new president to the investigations. And they established that the administration had frozen $391 million in military aid to Ukraine an ally under threa… [+1800 chars]',
+    type: 'neutral',
+    score: 0.023265215916667,
+    ratio: -0.18266584174895,
+    version: '4.0.0',
+    email: 'help@twinword.com',
+    result_code: '200',
+    result_msg: 'Success'
+  },
+  {
+    source: { id: 'the-new-york-times', name: 'The New York Times' },
+    author: 'twinword inc.',
+    title: 'Here Are the Key Members to Watch on the House Judiciary Committee',
+    description: 'The panel has been involved with impeachment proceedings against three presidents. On Wednesday, Donald Trump will be the fourth.',
+    url: 'https://www.nytimes.com/2019/12/04/us/politics/members-house-judiciary-committee.html',
+    urlToImage: 'https://static01.nyt.com/images/2019/12/04/us/politics/04dc-committee-1/merlin_163530822_4e9e4b8b-87da-466e-93ae-c59aad9cdeee-facebookJumbo.jpg',
+    publishedAt: '2019-12-04T14:30:11Z',
+    content: 'WASHINGTON Since its creation in 1813, the House Judiciary Committee has served as the backdrop to debates over the most contentious issues in American history, including a womans right to vote, immigration and civil rights. It has either held or recommended … [+1692 chars]',
+    type: 'positive',
+    score: 0.14370881054167,
+    ratio: 0.36540409373848,
+    version: '4.0.0',
+    email: 'help@twinword.com',
+    result_code: '200',
+    result_msg: 'Success'
+  },
+  {
+    source: { id: 'the-new-york-times', name: 'The New York Times' },
+    author: 'twinword inc.',
+    title: 'House Democrats Expected to Unveil Articles of Impeachment Against Trump',
+    description: 'Democratic leaders planned a 9 a.m. news conference to revealed charges against President Trump.',
+    url: 'https://www.nytimes.com/2019/12/10/us/politics/trump-impeachment-articles.html',
+    urlToImage: 'https://static01.nyt.com/images/2019/12/10/us/10DC-IMPEACH/10DC-IMPEACH-facebookJumbo.jpg',
+    publishedAt: '2019-12-10T13:51:48Z',
+    content: 'WASHINGTON House Democratic leaders were expected to announce Tuesday that they would move ahead this week with two articles of impeachment against President Trump charging him with abuse of power and obstruction of Congress, accusing him of violating the Con… [+497 chars]',
+    type: 'negative',
+    score: -0.24813089622222,
+    ratio: -0.65182813142016,
+    version: '4.0.0',
+    email: 'help@twinword.com',
+    result_code: '200',
+    result_msg: 'Success'
+  }
+]
 
     db.Article
     .remove({})
